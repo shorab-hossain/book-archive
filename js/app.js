@@ -21,7 +21,7 @@ const searchButton = () =>{
         document.getElementById('card').textContent ='';
         //show spinner
          toggleSpinner('block'); 
-         document.getElementById('team-numbers').style.display = 'none';
+         document.getElementById('book-numbers').style.display = 'none';
           const url =`http://openlibrary.org/search.json?q=${searchText}`;
            fetch(url)
           .then(res => res.json())
@@ -32,11 +32,11 @@ const searchButton = () =>{
 const displayError = () => {
     document.getElementById('error-message').style.display = 'block';
     document.getElementById('spinner').style.display = 'none';
-    document.getElementById('team-numbers').textContent = '';
+    document.getElementById('book-numbers').textContent = '';
 }
 //load all book
 const loadBook = books =>{
-    document.getElementById('team-numbers').textContent = '';
+    document.getElementById('book-numbers').textContent = '';
     const cardContainer = document.getElementById('card')
     // clear all-card and replace new card
     cardContainer.textContent='';
@@ -47,8 +47,8 @@ const loadBook = books =>{
     }
     else{
       document.getElementById('error-message').style.display ='none';
-      const bookCount =  document.getElementById('team-numbers').innerText = `books Found ${bookList.length}`;
-      document.getElementById('team-numbers').style.display='block';
+      const bookCount =  document.getElementById('book-numbers').innerText = `books Found ${bookList.length}`;
+      document.getElementById('book-numbers').style.display='block';
       toggleSpinner('none');
       /* -----------display all book card -------------*/
          books?.forEach( book => {
