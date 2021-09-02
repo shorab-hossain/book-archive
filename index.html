@@ -7,10 +7,49 @@
     <title>Book-Archive</title>
     <!-- stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: azure;
+        }
+        #card{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+        #spinners{
+            display:none;
+            margin-left: 50%;
+        }
+        #error-message{
+            display:none;
+        }
+        #team-numbers{
+            display:none;
+        }
+    </style>
 </head>
 <body>
-    
+ <section class='container'>   
+    <!-- inputFeild and button -->
+    <h3 class="text-center fw-bold text-success p-4 ">Search your Favoraite Book</h3>
+    <div class="input-group mb-3 w-50 m-auto ">
+        <input id="input-value" type="text" class="form-control p-3" placeholder="Choices your Favoraite Book" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-primary p-3" type="button" onclick="searchButton()">Search</button>
+      </div>
 
+      <!-- spinners -->
+      <div id="spinners" class="spinner-border text-primary" role="status">
+      </div>
+
+      <!-- error-message -->
+      <div id="error-message"><h1 class="bg-dark text-center text-danger w-50 m-auto">Insert a valid name</h1></div>
+
+    <!-- Results found -->
+       <div id="team-numbers" class="bg-dark text-warning m-auto text-center w-50 fs-4 fw-bold p-3"></div>
+
+      <!-- book-card -->
+        <div id="card" class='m-auto g-4 '></div>
+
+    </section>
 
     <!-- boostrap-js-file -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
